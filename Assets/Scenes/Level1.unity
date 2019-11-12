@@ -376,3 +376,5 @@ MonoBehaviour:
   moveBackward: 115
   rotateRight: 100
   rotateLeft: 97
+  moveUp: 32
+  moveDown: 304

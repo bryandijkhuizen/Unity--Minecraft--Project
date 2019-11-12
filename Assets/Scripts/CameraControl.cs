@@ -8,6 +8,8 @@ public class CameraControl : MonoBehaviour
     public KeyCode moveBackward;
     public KeyCode rotateRight;
     public KeyCode rotateLeft;
+    public KeyCode moveUp;
+    public KeyCode moveDown;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +60,26 @@ public class CameraControl : MonoBehaviour
         }
 
         if (Input.GetKeyUp(moveBackward))
+        {
+            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+        }
+
+        if (Input.GetKeyDown(moveUp))
+        {
+            GetComponent<Rigidbody>().AddRelativeForce(0, 100, 0);
+        }
+
+        if (Input.GetKeyUp(moveUp))
+        {
+            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+        }
+
+        if (Input.GetKeyDown(moveDown))
+        {
+            GetComponent<Rigidbody>().AddRelativeForce(0, -100, 0);
+        }
+
+        if (Input.GetKeyUp(moveDown))
         {
             GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         }
